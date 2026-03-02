@@ -1,5 +1,12 @@
 # Arrays
 
-This folder contains LeetCode problems related to Arrays.
+This folder contains LeetCode problems related to array manipulation and traversal.
 
-## Problems Solved
+## Topics Covered
+- Prefix Sum
+- Two Pointers
+- Hashing
+- Sliding Window
+- Sorting-based problems
+
+## Problems
