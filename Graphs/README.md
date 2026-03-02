@@ -1,5 +1,12 @@
 # Graphs
 
-This folder contains LeetCode problems related to Graphs.
+Graph traversal and path-finding problems.
 
-## Problems Solved
+## Topics Covered
+- BFS
+- DFS
+- Topological Sort
+- Dijkstra
+- Union-Find
+
+## Problems
