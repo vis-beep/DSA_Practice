@@ -1,5 +1,9 @@
 # Dynamic Programming
 
-This folder contains LeetCode problems related to Dynamic Programming:
+This folder contains problems solved using Dynamic Programming techniques.
 
-## Problems Solved
+Includes:
+- Memoization
+- Tabulation
+- State Compression
+- Optimization problems
