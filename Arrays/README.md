@@ -6,7 +6,7 @@ This folder contains LeetCode problems related to array manipulation and travers
 - Prefix Sum
 - Two Pointers
 - Hashing
-- Sliding Window
+- Matrix
 - Sorting-based problems
 
 ## Problems
