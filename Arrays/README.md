@@ -7,6 +7,7 @@ This folder contains LeetCode problems related to array manipulation and travers
 - Two Pointers
 - Hashing
 - Matrix
+- Strings
 - Sorting-based problems
 
 ## Problems
