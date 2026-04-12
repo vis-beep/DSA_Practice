@@ -1,0 +1,36 @@
+class Solution {
+    public int minimumDistance(String word) {
+        int n = word.length();
+        
+        // dp[j] = max saving when second finger is at letter j
+        int[] dp = new int[26];
+        int total = 0;
+
+        for (int i = 0; i < n - 1; i++) {
+            int cur = word.charAt(i) - 'A';
+            int next = word.charAt(i + 1) - 'A';
+
+            int[] newDp = dp.clone();
+
+            for (int j = 0; j < 26; j++) {
+                // move second finger from j → next
+                int saving = dist(cur, next) - dist(j, next);
+                newDp[cur] = Math.max(newDp[cur], dp[j] + saving);
+            }
+
+            dp = newDp;
+            total += dist(cur, next);
+        }
+
+        int maxSave = 0;
+        for (int x : dp) maxSave = Math.max(maxSave, x);
+
+        return total - maxSave;
+    }
+
+    private int dist(int a, int b) {
+        int x1 = a / 6, y1 = a % 6;
+        int x2 = b / 6, y2 = b % 6;
+        return Math.abs(x1 - x2) + Math.abs(y1 - y2);
+    }
+}
