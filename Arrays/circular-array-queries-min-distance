@@ -1,0 +1,50 @@
+from collections import defaultdict
+import bisect
+
+class Solution:
+    def solveQueries(self, nums, queries):
+        n = len(nums)
+        
+        pos = defaultdict(list)
+        
+        # Store indices of each value
+        for i, v in enumerate(nums):
+            pos[v].append(i)
+        
+        # Extend indices to handle circular nature
+        for v in pos:
+            arr = pos[v]
+            extended = []
+            
+            for x in arr:
+                extended.append(x)
+                extended.append(x - n)
+                extended.append(x + n)
+            
+            extended.sort()
+            pos[v] = extended
+        
+        result = []
+        
+        for i in queries:
+            arr = pos[nums[i]]
+            
+            # If only one occurrence
+            if len(arr) <= 3:
+                result.append(-1)
+                continue
+            
+            idx = bisect.bisect_left(arr, i)
+            
+            ans = float('inf')
+            
+            # Check nearest neighbors
+            if idx - 1 >= 0:
+                ans = min(ans, abs(arr[idx - 1] - i))
+            
+            if idx + 1 < len(arr):
+                ans = min(ans, abs(arr[idx + 1] - i))
+            
+            result.append(ans)
+        
+        return result
