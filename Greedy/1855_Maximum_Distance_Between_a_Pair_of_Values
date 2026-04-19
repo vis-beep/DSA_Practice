@@ -1,0 +1,17 @@
+class Solution:
+    def maxDistance(self, nums1, nums2):
+        i = 0
+        j = 0
+        max_dist = 0
+        
+        # Traverse both arrays using two pointers
+        while i < len(nums1) and j < len(nums2):
+            if nums1[i] <= nums2[j]:
+                # Valid pair found
+                max_dist = max(max_dist, j - i)
+                j += 1  # Try to increase distance
+            else:
+                # Move i to find smaller value
+                i += 1
+        
+        return max_dist
