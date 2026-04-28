@@ -1,7 +1,6 @@
 Given a 2D integer grid and an integer x, the task is to make all grid elements equal by either adding or subtracting x in one operation.
 
 ### 💡 Approach:
-
 * Flatten the 2D grid into a 1D list
 * Check if all elements have the same remainder when divided by x
   → If not, return `-1` since it's impossible
