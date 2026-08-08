@@ -4,7 +4,7 @@ class Solution:
         m = len(word2)
 
         # last[j] = position of the last selected character
-        # when matching word2[j:] from right to left.
+        # when matching word2[j:] from right to left
         last = [-1] * m
 
         i = n - 1
